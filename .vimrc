@@ -1,26 +1,28 @@
-" 
-" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+" show line number
+set number
+
+" show mode
+set noshowmode 
+
+" enable syntax highlighting
+syntax enable
+
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчняж;abcdefghijklmnopqrstuvwxyz\;
+
+" vim-plug
+" ~/.vim/autoload/plug.vim
 call plug#begin('~/.vim/plugged')
 
-Plug 'pearofducks/ansible-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rizzatti/dash.vim'
 
-Plug 'git://github.com/tpope/vim-fugitive.git'
-
-" http://vimawesome.com/plugin/vim-colors-solarized-ours
-Plug 'altercation/vim-colors-solarized'
-
-" Initialize plugin system
 call plug#end()
 
-" Always show the status line
-set laststatus=2
+let g:airline_theme='simple'
 
-set statusline=%f\ -\ FileType:\ %y\ -\ %{fugitive#statusline()}
-
-" http://vimawesome.com/plugin/vim-colors-solarized-ours
-syntax enable
-set background=dark
-colorscheme solarized
-
-" Enable line numbers
-set number
